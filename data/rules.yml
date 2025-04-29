@@ -1,0 +1,13 @@
+version: "3.1"
+
+rules:
+
+- rule: Montrer tous les audits
+  steps:
+    - intent: tous_les_audits
+    - action: action_get_all_audits
+
+- rule: Filtrer les audits par année
+  steps:
+    - intent: filter_audits_by_year
+    - action: action_filter_audits_by_year

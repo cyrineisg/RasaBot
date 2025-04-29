@@ -1,0 +1,47 @@
+version: "3.1"
+
+intents:
+  - demander_infos_audit
+  - tous_les_audits
+  - filter_audits_by_year
+  - resume_audits_by_year
+
+entities:
+  - audit_reference
+  - start_year
+  - end_year
+
+slots:
+  audit_reference:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: audit_reference
+        
+  start_year:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: start_year
+
+  end_year:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: end_year
+
+
+
+responses:
+  utter_ask_audit_id:
+    - text: "Quelle est la référence de l'audit que vous souhaitez consulter ?"
+
+actions:
+  - action_get_audit_info
+  - action_get_all_audits
+  - action_filter_audits_by_year
+  - action_resume_audits_by_year
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

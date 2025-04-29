@@ -1,0 +1,30 @@
+version: "3.1"
+
+stories:
+
+- story: demande d'un audit spécifique
+  steps:
+    - intent: demander_infos_audit
+    - action: action_get_audit_info
+
+- story: demande de tous les audits
+  steps:
+    - intent: tous_les_audits
+    - action: action_get_all_audits
+
+
+- story: Filtrer audits entre deux années
+  steps:
+    - intent: filter_audits_by_year
+      entities:
+        - start_year: "2022"
+        - end_year: "2023"
+    - action: action_filter_audits_by_year
+
+- story: Résumé des audits par période
+  steps:
+    - intent: resume_audits_by_year
+      entities:
+        - start_year: "2022"
+        - end_year: "2023"
+    - action: action_resume_audits_by_year

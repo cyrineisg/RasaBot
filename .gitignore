@@ -1,0 +1,43 @@
+# Environnement virtuel
+venv/
+.venv/
+rasa-venv38
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Fichiers de log
+*.log
+
+# Fichiers générés par Rasa
+.rasa/
+.results/
+*.db
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# Fichier de configuration local
+.env
+.env.*
+
+# Dépendances installées (le requirements.txt suffit)
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Tests
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/

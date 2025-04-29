@@ -1,0 +1,57 @@
+version: "3.1"
+
+regex:
+  - name: audit_reference
+    pattern: (AI|AC|AE)/\d{2}/\d{4}
+
+nlu:
+- intent: demander_infos_audit
+  examples: |
+    - Donne-moi les informations de l'audit [AI/02/2015](audit_reference)
+    - Quels sont les détails de l'audit [AC/07/2015](audit_reference) ?
+    - Je veux connaître les infos de l'audit [AE/07/2015](audit_reference)
+    - Informations de l'audit [AI/01/2023](audit_reference)
+    - Détails concernant l'audit [AC/12/2021](audit_reference)
+    - L'audit [AE/05/2022](audit_reference), quelles infos ?
+    - Peux-tu m'afficher les détails de [AI/10/2020](audit_reference) ? 
+
+- intent: tous_les_audits
+  examples: |
+    - Donne-moi la liste des audits
+    - donne-moi la liste des audits
+    - DONNE-MOI LA LISTE DES AUDITS
+    - Quels sont tous les audits disponibles ?
+    - quels sont tous les audits disponibles ?
+    - QUELS SONT TOUS LES AUDITS DISPONIBLES ?
+    - Montre-moi tous les audits
+    - montre-moi tous les audits
+    - MONTRE-MOI TOUS LES AUDITS
+    - Affiche les audits
+    - affiche les audits
+    - AFFICHE LES AUDITS
+    - Je veux voir tous les audits
+    - je veux voir tous les audits
+    - JE VEUX VOIR TOUS LES AUDITS
+    - Liste des audits
+    - liste des audits
+    - LISTE DES AUDITS
+    - Tous les audits
+    - tous les audits
+    - TOUS LES AUDITS
+
+- intent: filter_audits_by_year
+  examples: |
+    - Montre-moi les audits entre [2020](start_year) et [2022](end_year)
+    - Peux-tu afficher les audits entre [2018](start_year) et [2020](end_year) ?
+    - Liste les audits réalisés de [2019](start_year) à [2021](end_year)
+    - Donne-moi les audits de [2021](start_year) à [2023](end_year)
+    - Quels audits ont été réalisés entre [2015](start_year) et [2019](end_year) ?
+
+
+- intent: resume_audits_by_year
+  examples: |
+    - Peux-tu me donner un résumé des audits entre [2022](start_year) et [2023](end_year) ?
+    - Montre-moi les points forts et faibles des audits de [2021](start_year) à [2022](end_year)
+    - Résume les audits réalisés entre [2020](start_year) et [2024](end_year)
+    - J'aimerais voir les recommandations et non-conformités des audits entre [2019](start_year) et [2022](end_year)
+    - Résumé des audits entre [2021](start_year) et [2022](end_year)
