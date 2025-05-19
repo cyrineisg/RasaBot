@@ -5,42 +5,56 @@ intents:
   - tous_les_audits
   - filter_audits_by_year
   - resume_audits_by_year
+  - choisir_processus
 
 entities:
   - audit_reference
   - start_year
   - end_year
+  - process_designation
 
 slots:
   audit_reference:
     type: text
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: audit_reference
         
   start_year:
     type: text
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: start_year
 
   end_year:
     type: text
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: end_year
 
+  process_designation:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: process_designation
 
 
 responses:
   utter_ask_audit_id:
     - text: "Quelle est la référence de l'audit que vous souhaitez consulter ?"
+  utter_ask_process:
+    - text: "Quel processus souhaitez-vous consulter ?"
 
 actions:
   - action_get_audit_info
   - action_get_all_audits
   - action_filter_audits_by_year
   - action_resume_audits_by_year
+  - action_get_process_details
 
 session_config:
   session_expiration_time: 60

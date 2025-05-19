@@ -28,3 +28,11 @@ stories:
         - start_year: "2022"
         - end_year: "2023"
     - action: action_resume_audits_by_year
+
+
+
+
+- story: choix processus et affichage détails
+  steps:
+    - intent: choisir_processus
+    - action: action_get_process_details

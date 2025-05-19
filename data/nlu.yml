@@ -55,3 +55,10 @@ nlu:
     - Résume les audits réalisés entre [2020](start_year) et [2024](end_year)
     - J'aimerais voir les recommandations et non-conformités des audits entre [2019](start_year) et [2022](end_year)
     - Résumé des audits entre [2021](start_year) et [2022](end_year)
+
+
+- intent: choisir_processus
+  examples: |
+    - Je choisis le processus [Production](process_designation)
+    - Affiche les détails du processus [RH](process_designation)
+    - Je veux les infos du processus [Qualité](process_designation)
